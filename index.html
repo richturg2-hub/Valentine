@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Be My Valentine?</title>
+  <style>
+    body {
+      background: #ff009D;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #d6336c;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    button {
+      padding: 15px 30px;
+      margin: 20px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .yes { background: #ff4d6d; color: white; }
+    .no { background: #f8c2d1; position: absolute; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Will you be my Valentine?</h1>
+
+  <button class="yes" onclick="goToYesPage()">Yes</button>
+  <button class="no" id="noBtn" onmouseover="runAway()">No</button>
+
+  <script>
+    function goToYesPage() {
+      window.location.href = "yespage.html";
+    }
+
+    function runAway() {
+      const btn = document.getElementById("noBtn");
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 100);
+      btn.style.left = x + "px";
+      btn.style.top = y + "px";
+    }
+  </script>
+
+</body>
+</html>
